@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 # DATABASE_URL can be overridden via environment variable.
 # Default: SQLite file stored in /data/ (Docker volume) or local ./hrms.db
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./hrms.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:////tmp/hrms.db")
 
 # For SQLite we need connect_args; for PostgreSQL this is not needed
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
